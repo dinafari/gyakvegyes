@@ -1,0 +1,29 @@
+# Angular kizárások
+/node_modules/
+/dist/
+/.angular/
+/.angular-cache/
+
+# Csak Angular app mappa engedélyezése
+/src/*
+!/src/app/**
+!/src/app/*
+
+# Bootstrap – képek kizárása
+*.jpg
+*.jpeg
+
+# Node.js – minden maradhat
+
+# Szövegfájlok kizárása
+leiras.txt
+vizsgaminta.txt
+hf.txt
+
+# Általános kizárások
+.DS_Store
+Thumbs.db
+*.log
+
+# Git saját mappa
+.git

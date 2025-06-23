@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HTML-CSS feladat 6</title>
+</head>
+<body>
+    <!-- 5. HTML + Inline CSS 
+     Készíts egy "Elérhetőségek" blokkot:
+
+        cím: "Kapcsolat" (<h3>)
+
+        név, telefonszám, email
+
+        háttérszín: aliceblue
+
+        szöveg szín: midnightblue
+
+        betűméret: cím: 24px, többinél 16px
+
+        legyen lekerekített sarok és árnyék
+
+        minden stílust style=""-ban adj meg 
+    
+    -->
+
+  <div style="background-color: aliceblue; text-align: center; border-radius: 20px; box-shadow: 2px 2px 6px rgba(0,0,0,0.2); width: 400px; margin: auto; padding: 20px; color: midnightblue;">
+    <h3 style="font-size: 24px;">Kapcsolat</h3>
+
+    <label for="nev" style="font-size: 16px;">Név</label><br />
+    <input type="text" name="nev" id="nev" /><br /><br />
+
+    <label for="telefonszam" style="font-size: 16px;">Telefonszám</label><br />
+    <input type="tel" name="telefonszam" id="telefonszam" /><br /><br />
+
+    <label for="email" style="font-size: 16px;">Email</label><br />
+    <input type="email" name="email" id="email" /><br />
+  </div>
+
+</body>
+</html>

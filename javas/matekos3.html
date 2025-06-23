@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matekos 3 JavaScript</title>
+</head>
+<body>
+
+    <script>
+        /*
+           1. JavaScript – 3 matematikai-logikai feladat
+            Páros számok átlaga
+            Írj egy függvényt, amely visszaadja a tömbben található páros számok átlagát.
+            Pl.: [2, 4, 5, 7, 10] → Átlag: (2 + 4 + 10) / 3 = 5.33  
+
+        */ 
+
+        const tomb1=[2, 4, 5, 7, 10];
+
+
+        function parosAtl(){
+           const paros= tomb1.filter((szam)=>szam % 2 ==0);
+            if (paros.length === 0) return 0; // Ne osszon nullával
+           const ossz= paros.reduce((acc,curr) =>acc + curr);
+           return ossz/paros.length;
+        }
+        console.log(parosAtl());
+
+
+
+
+       /*
+          2. Tömbben negatív számok száma
+            Készíts egy függvényt, amely megszámolja, hány negatív szám van a tömbben.
+            Pl.: [3, -1, -5, 6] → 2
+
+        */
+        const tomb2=[3, -1, -5, 6];
+
+        function negativDB(){
+            const neg= tomb2.filter((szam)=>szam < 0).length;
+            return neg;
+        }
+        console.log(negativDB());
+       /*
+           3. Két szám közé eső számok összege
+            Add vissza azoknak a számoknak az összegét, amelyek két adott szám közé esnek (kizárva a szélső értékeket).
+            Pl.: 3 és 7 → 4 + 5 + 6 = 15
+        
+        */
+
+        function ketszamkozOssz(a, b) {
+            let kisebb = Math.min(a, b);//  kizárják a szélső értékeket a ciklusból min. és max.
+            let nagyobb = Math.max(a, b);
+            let osszeg = 0;
+
+            for (let i = kisebb + 1; i < nagyobb; i++) {
+                osszeg += i;
+            }
+
+            return osszeg;
+        }
+
+        console.log(ketszamkozOssz(3, 7)); // ➜ 4 + 5 + 6 = 15
+
+        //Pl:Tegyük fel, hogy a = 3, b = 7 → akkor a for ciklus így fut:
+
+        /*i = 4 → osszeg = 0 + 4 → 4
+
+            i = 5 → osszeg = 4 + 5 → 9
+
+            i = 6 → osszeg = 9 + 6 → 15
+        */
+
+
+        //osszeg += i; 
+        //Ez röviden ugyanazt jelenti, mint:
+       //osszeg = osszeg + i;
+
+
+        
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

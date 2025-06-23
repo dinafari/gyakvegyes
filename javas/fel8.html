@@ -1,0 +1,34 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            /*Írj egy függvényt, amely:
+                const szamok = [3, 7, 12, 18, 25, 30];
+
+                visszaadja azoknak a számoknak a négyzetét, amik:
+
+                nagyobbak mint 10
+
+                és párosak
+
+              Példa kimenet: [144, 324, 900 
+            */
+            const szamok = [3, 7, 12, 18, 25, 30];
+
+            function parosNagyobbTizNegyz(){
+                const parosnagyobb= szamok.filter(szam=>szam % 2==0 && szam > 10);
+                return parosnagyobb.map(szam=>szam*szam);
+
+            }
+            console.log(parosNagyobbTizNegyz());
+
+
+
+
+        </script>
+        
+    </body>
+</html>

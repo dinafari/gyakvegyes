@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fel3 JS</title>
+</head>
+<body>
+
+    <script>
+        //1. Prímszámok kiszűrése
+        //Feladat:
+        //Készíts egy függvényt, amely visszaadja a tömbben található prímszámokat.
+
+        // Bemenet: [2, 4, 5, 6, 7, 8, 9, 11]
+        // Kimenet: [2, 5, 7, 11]
+
+        const bemenet1=[2, 4, 5, 6, 7, 8, 9, 11]
+
+        function isPrimE(bemenet1){
+            return bemenet1.filter(szam=>{ if ( szam < 2)return false; for (let i= 2; i<=Math.sqrt(szam);i++){if(szam % i==0)return false;} return true;  } );
+          
+        }
+        console.log(isPrimE(bemenet1));
+
+        //2. Számok osztói
+        //Feladat:
+        //Készíts egy függvényt, amely visszaadja egy adott szám összes osztóját.
+        
+        // Bemenet: 12
+        // Kimenet: [1, 2, 3, 4, 6, 12]
+
+        function osszesOsztoja(n){
+            let eredmeny =[12,];// a szám önmaga mint oszto is benne lesz az eredmények közt
+            for(let i =1; i < n; i++){//azért eg ya kezdőérték ,mert minden szám osztható 1-el, ha az osztója kisebb mint a szám (n) akkor i++ megnöveljük.
+                if( n % i ==0){
+                    eredmeny.push(i);//Belepusholjuk az i osztót az eredményekbe
+                   
+                }
+
+            }
+            return eredmeny.sort((a,b)=>a-b); //Esztétika miatt növekvő sorrendbe teszem :)
+             
+
+        }  
+        const n= 12;  
+        console.log(osszesOsztoja(n));
+
+
+        //3. Páros számok duplázása
+        //Feladat:
+        //Készíts egy függvényt, amely egy tömbből a páros számokat duplázza,
+        //  a többit elhagyja.
+        // Bemenet: [1, 2, 3, 4]
+        // Kimenet: [4, 8]
+
+        const bemenet3=[1, 2, 3, 4];
+
+        function parosDupaz(){
+           const parosakduplazva= bemenet3.filter(szam=>szam % 2==0).map(szam=>szam*2);
+           return parosakduplazva;
+
+        }
+        console.log(parosDupaz(bemenet3));
+
+
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Matekos feladatok</title>
+</head>
+<body>
+    <script>
+        /*
+            1. Páros számok kivonása:
+            Készíts egy függvényt, amely visszaadja a tömb első és utolsó páros számának különbségét.
+            Pl: [2, 7, 10, 5, 8] → 2 - 8 = -6
+
+        */
+
+        const tomb1=[2, 7, 10, 5, 8];
+
+        
+
+        function kivonelsoUtolsoParos() {
+            const parosak = tomb1.filter(szam => szam % 2 === 0);
+            const elso = parosak[0];
+            const utolso = parosak[parosak.length - 1];
+            return elso - utolso;
+        }
+        console.log("Páros kivonás:", kivonelsoUtolsoParos()); // -6
+
+
+        
+
+
+        /*2. Középső érték kiszámítása:
+            Készíts egy függvényt, amely visszaadja három szám közül a középsőt (nem a legnagyobbat, nem a legkisebbet).
+            Pl: 5, 12, 8 → 8
+        */
+
+        function kozepsoE(a, b, c) {
+            const tomb = [a, b, c].sort((x, y) => x - y);//Sorrendbe teszi a sort a számokat növekvőbe
+            return tomb[1];// Így visszaadja a középsőt mindig mert az az 1 indexű
+        }
+
+        console.log("Középső érték:", kozepsoE(10, 5, 8)); // 8
+
+        
+    
+
+       /*
+            3. Oszthatóság ellenőrzése:
+            Ellenőrizd, hogy a két szám szorzata osztható-e 6-tal.
+            Ha igen → "Osztható 6-tal"
+            Ha nem → "Nem osztható 6-ta
+        */
+
+
+        function oszthatoHAttal(x,y){
+
+            const szorzatuk=x*y;
+
+            if (szorzatuk % 6==0){
+                return `${szorzatuk} Osztható 6-al`;
+            }else{
+                return`${szorzatuk} Nem osztható 6-al`;
+            }
+            
+
+        }
+        console.log(oszthatoHAttal(3,2));
+
+
+    </script>
+    
+</body>
+</html>

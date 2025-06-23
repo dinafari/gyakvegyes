@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript logikai feladat</title>
+</head>
+<body>
+    <script>
+
+        //1. Tömbből visszaadni a legnagyobb szám négyzetét
+        //Pl.: [3, 8, 5] → 64
+
+        const tomb1=[3,8,5];
+
+        function legNszamNegyzete(){
+            
+            const negyz= tomb1.map(szam=>szam*szam);
+            return Math.max(...negyz);
+
+        }
+        console.log("A tomb1 legnagyobb számának négyzete",legNszamNegyzete());
+
+        //2. Számjegyek összege egy számra
+        //324 → 3 + 2 + 4 = 9
+
+        function szamjOssszege(n){
+          const alakitszamol= n.toString().split('').map(Number)
+          .reduce((a,b)=>a+b,0);
+          return alakitszamol;
+
+
+        }
+        console.log("Számjegyek összege egy számra",szamjOssszege(324));//számjegy amit átalakítunk és összeadunk
+
+
+
+        // Ha viszont egy tömb számait adod össze akkkor így :
+
+        /*const tomb2= [3,2,4,];
+
+        function osszeguk(){
+
+            const ossz= tomb2.reduce((a,b)=>a+b);
+            return ossz;
+        }
+        console.log(osszeguk());*/
+
+
+
+
+
+
+        //3. Visszaadni az első 3 számból a páros számok négyzetgyökét
+        //Pl.: [4, 9, 16, 25] → [2, 4]
+
+        const tomb3=[4, 9, 16, 25];
+
+        function elsoHParosNegyzGy(){
+            const elsoh= tomb3.slice(0,3).filter(szam=>szam %2 ==0);
+            return elsoh.map(szam=>Math.sqrt(szam));
+        }
+        console.log("Az első 3 számból a páros számok négyzetgyöke",elsoHParosNegyzGy());
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> JavaScript -matematikai-logikai feladatok-matekos12.html</title>
+</head>
+<body>
+    <script>
+        /*   1. Digitösszeg számítása
+        Írj egy függvényt, amely visszaadja egy szám számjegyeinek összegét.
+            Pl.: 1234 → 1 + 2 + 3 + 4 = 10
+
+        */
+
+        function szamjegyekOsszege(n){
+            const szamma=n.toString().split('').map(Number);
+            const osszege= szamma.reduce((acc,curr)=>acc+curr);
+            return osszege;
+        }
+        console.log(szamjegyekOsszege(1234));//→ 1 + 2 + 3 + 4 = 10
+
+        /*
+            2.Legkisebb páros szám
+            Keresd meg a tömb legkisebb páros számát!
+            Pl.: [7, 4, 9, 2, 11] → 2
+
+        */
+
+        function legkParos(szamok){
+          
+            const paros=szamok.filter((szam)=>szam%2===0);
+            const legk=Math.min(...paros);
+            return legk;
+
+        }
+        console.log(legkParos([7, 4, 9, 2, 11]));// → 2
+        /*
+
+            2.Két szám legnagyobb közös osztója (LNKO)
+            Írj egy függvényt, amely két szám LNKO-ját() számolja ki.
+            Pl.: lnko(12, 18) → 6
+
+
+            Kivitelezése,magyarázat a függvényre:
+
+            Elindulsz a két szám kisebbikéből (mert annál nagyobb közös osztó nem lehet).
+
+            Visszafelé keresel, és ha találsz egy olyan eredmeny értéket, 
+            ami mindkét szám osztója, akkor megvan az LNKO.
+
+        */
+
+        function legnKozOszto(a,b){ 
+            // Megkeressük a  Minimumát  a és b-nek
+            let eredmeny = Math.min(a, b);
+            while (eredmeny > 0) {
+                if (a % eredmeny == 0 && b % eredmeny == 0) {
+                    break;
+                }
+                eredmeny--;
+            }
+    
+            // Return LNKO(GCD- Greatest Common Divisior angolul)
+            return eredmeny;
+            
+        }
+        console.log(legnKozOszto(12,18));
+
+        /*
+
+            3.Számokat tízesével kerekítve
+            Készíts egy függvényt, amely egy tömb minden számát lefelé kerekíti a legközelebbi 10-esre.
+            Pl.: [27, 34, 49] → [20, 30, 40]
+
+            Magyarázat a megoldásra:
+            Math.floor(szam / 10) → elosztja 10-zel, lefelé kerekít
+
+            * 10 → visszakapjuk a legközelebbi tízes értéket
+
+
+
+        */
+
+        function kerekitTizesre(tomb){
+
+            return tomb.map(szam => Math.floor(szam / 10) * 10);
+
+            
+        }
+        console.log(kerekitTizesre([27, 34, 49]));// [20, 30, 40]
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

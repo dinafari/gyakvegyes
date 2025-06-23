@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Matekos 9</title>
+</head>
+<body>
+    <script>
+
+        //1.Legnagyobb különbség számjegyek között
+        //Írj függvényt, amely visszaadja egy szám számjegyei közti legnagyobb különbséget.
+        //Pl.: 3529 → 9 - 2 = 7 → 7
+
+        function kulonbseg(n){
+            
+            const szamma=n.toString().split('').map(Number);
+           
+            const legn=Math.max(...szamma);
+            const legk=Math.min(...szamma);
+            return legn-legk;
+        }
+        console.log(kulonbseg(3529));
+
+        //2.Számjegyek szorzata páros-e?
+        //Pl.: 132 → 1×3×2 = 6 → páros
+
+        function szorztaParos(n){
+
+            const atalakit=n.toString().split('').map(Number);
+
+            const szorzata= atalakit.reduce((acc,curr)=>acc*curr);
+         
+            if(szorzata % 2 ==0){
+                return `${szorzata} páros`;
+            }else{
+                return `${szorzata} páratlan`;
+            }
+
+
+        }
+        console.log(szorztaParos(123));
+
+
+
+    </script>
+    
+</body>
+</html>

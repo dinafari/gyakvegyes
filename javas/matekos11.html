@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matekos 11-JavaScript</title>
+</head>
+<body>
+    <script>
+
+        // 1.Írj egy függvényt, amely visszaadja a tömb összes páros elemének összegét!
+        // Pl.: [1, 4, 6, 7] → 4 + 6 = 10
+
+        const szamok=[1, 4, 6, 7];
+
+        function parosOsszeg(){
+
+            const paros=szamok.filter((szam)=>szam %2==0);
+            return paros.reduce((acc,curr)=>acc+curr,0);
+
+
+        }
+        console.log(parosOsszeg(szamok));
+
+        //2. Add vissza a tömb legnagyobb és legkisebb elemének különbségét!
+        // Pl.: [4, 9, 2] → 9 - 2 = 7
+
+        const tomb1=[4, 9, 2];
+
+        function legnagyLegkKul(){
+            const legnagyobb=Math.max(...tomb1);
+            const legkisebb=Math.min(...tomb1);
+            return legnagyobb-legkisebb;
+        }
+        console.log(legnagyLegkKul(tomb1));
+
+
+        // 3.Számold meg, hány olyan szám van a tömbben, ami osztható 3-mal!
+        // Pl.: [3, 6, 7, 8, 9] → 3 db
+
+        const tomb2=[3, 6, 7, 8, 9];
+
+        function oszthatoHarommalDB(){
+            const oszth=tomb2.filter((szam)=>szam % 3==0).length;
+            return oszth;
+
+        }
+        console.log(oszthatoHarommalDB(tomb2)+" db ");
+
+
+
+    </script>
+
+    
+    
+</body>
+</html>

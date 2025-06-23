@@ -1,0 +1,30 @@
+Mit csinál ez pontosan?
+1. Array.from({ length: n }, ...)
+Ez egy n hosszúságú tömböt hoz létre, amely alapból undefined értékeket tartalmaz, de mi rögtön kitöltjük a kívánt értékekkel.
+
+2. (_, i) => i + 1
+Ez a callback függvény két paramétert kap:
+
+_ → a jelenlegi érték (nem használjuk, ezért alsóvonás),
+
+i → az aktuális index (0-ról indul).
+
+Mi minden indexre visszaadunk i + 1 értéket, tehát:
+
+i = 0 → 0 + 1 = 1
+
+i = 1 → 1 + 1 = 2
+
+i = 2 → 2 + 1 = 3
+
+...
+
+i = n-1 → n
+
+Példa:
+ts
+Másolás
+const eredmeny = Array.from({ length: 5 }, (_, i) => i + 1);
+console.log(eredmeny); // [1, 2, 3, 4, 5]
+
+Így hozunk létre gyorsan egy 1-től n-ig terjedő számsort egyetlen sorban

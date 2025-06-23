@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random számgenerátor</title>
+</head>
+<body>
+    <script>
+        //Randomszámgenerátor 10 és 2000 között for ciklussal:
+        function randomSzamGen(){
+            let szamok=[];
+            for(let i=0; i < 10; i++){
+                let randomsz=Math.floor(Math.random()*2000);
+                szamok.push(randomsz);
+
+            }
+            return szamok;
+
+        }
+        console.log(randomSzamGen());
+
+        //Vagy rövidebben:
+        function randomSzamGen2(){
+            return Math.floor(Math.random()*(2000-10 +1))+10;
+
+        }
+        console.log(randomSzamGen2());
+
+        //Vagy itt a végén határozod meg hogy mi legyen a tartomány,könnyen módosítható,Nova mutatta :):
+
+        function randomSzamGen3(min,max){
+            return Math.floor(Math.random()*(max-min +1))+ min;
+        }
+        console.log("Random szám 10 és 2000 között:",randomSzamGen3(10,2000));
+
+
+        function randomTombGen(darab, min, max){
+            const tomb = [];
+            for(let i = 0; i < darab; i++){
+                tomb.push(randomSzamGen3(min, max));//meghívja a randomSzamGen3 füfggvényt
+            }
+            return tomb;
+        }
+
+        console.log("10 random szám 10 és 2000 között:", randomTombGen(10, 10, 2000));
+
+
+        function randomSzamGen4(min,max){
+            let szam;
+            do{
+                szam= Math.floor(Math.random()*(max-min+1))+ min;
+            }while(szam % 2 !==0);// ← csak akkor megy tovább, ha a szám páratlan.Ez a feltétel azt mondja: amíg a szám páratlan, új számot kell generálni. 
+            return szam;
+            
+            
+               
+        }
+        console.log("Random páros szám 10 és 20 között:",randomSzamGen4(10,20));
+
+        function tobbParosSzam(min, max, db) {
+            const eredmeny = [];
+            while (eredmeny.length < db) {
+            const szam = Math.floor(Math.random() * (max - min + 1)) + min;
+            if (szam % 2 === 0) {
+                eredmeny.push(szam);
+            }
+            }
+            return eredmeny;
+        }
+
+        console.log("5 db páros szám:", tobbParosSzam(10, 20, 5));
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

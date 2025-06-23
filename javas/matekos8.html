@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matekos 8 JS</title>
+</head>
+<body>
+    <script>
+
+        //Írj egy függvényt, amely egy szám számjegyeit szétválogatja két tömbbe:
+        // az egyikben a páros,
+        //a másikban a páratlan számjegyek legyenek!
+
+        //Példa input: n = 82357
+
+        // {
+        //     paros: [8, 2],
+        //     paratlan: [3, 5, 7]
+        //  }
+
+
+        function valogatszamParosParatl(n){
+            const szamma= n.toString().split('');
+
+            const paros= szamma.filter((szam)=>szam % 2==0);
+            const paratlan= szamma.filter((szam)=>szam % 2 !==0);
+
+            return {
+                paros,
+                paratlan
+            }
+        }
+        console.log(valogatszamParosParatl(82357));
+
+
+        // Feladat:
+        //Írj egy függvényt, amely visszaadja egy tömb leggyakrabban előforduló számát!
+        //(Több azonos gyakoriság esetén elég az elsőt visszaadni.)
+
+       //Példa input: [1, 2, 3, 3, 2, 3, 4]
+        //Kimenet: 3
+
+        const tomb= [1, 2, 3, 3, 2, 3, 4]
+
+        function gyakorisagaszamnak(tomb){
+
+            const gyakori={};
+            let maxgyakszam= tomb[0];// ← legyen egy konkrét szám, ne tömb!
+
+            for(const szam of tomb){
+                gyakori[szam]=(gyakori[szam] || 0)+1;
+
+                if (gyakori[szam] > gyakori[maxgyakszam]){
+                    maxgyakszam =szam; 
+                }
+            }
+            return maxgyakszam;
+
+
+
+        }
+        console.log(gyakorisagaszamnak(tomb));
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

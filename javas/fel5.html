@@ -1,0 +1,80 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Feladat5 JS</title>
+    </head>
+    <body>
+        <script>
+
+            //3.Készíts egy függvényt, ami visszaadja az első három páros szám négyzetét ebből a tömbből
+            //Elvárt kimenet: [64, 4, 16]
+
+            const szamok = [3, 8, 11, 2, 9, 4, 15];
+
+            function parszamokNegyz(){
+
+                const paros= szamok.filter((szam)=>szam %2 ==0).slice(0,3);
+                const negyz= paros.map(szam=>szam*szam);
+                return negyz;
+
+
+            }
+            console.log(parszamokNegyz());
+
+           
+
+
+
+            //JavaScript – Matematikai logika + tömbkezelés
+            //2.Írj egy függvényt, amely:
+            //Visszaadja azon számokat a tömbből, amelyek oszthatók 2-vel vagy 5-tel,
+            //de nem lehetnek egyszerre oszthatók mindkettővel!
+
+            //(pl. 10 osztható 2-vel és 5-tel is → ez nem kell)
+            //(12 osztható 2-vel , de nem 5-tel → ez kell)
+
+            /*function oszthKvO(){
+                const kettovel=szamok2.filter((szam)=>szam % 2==0 && szam % 5 !==0);
+                
+                
+                const ottel =szamok2.filter((szam)=>szam % 5 ==0 && szam % 2 !==0)
+
+                return{
+                    kettovel,
+                    ottel
+                }
+            }
+            console.log(oszthKvO());*/ //Igy külön 2 tömbbel tér vissza ez is jó
+
+
+
+
+            //Ha egy tömmbe térnek vissza az eredmények akkor így csináld
+            const szamok2 = [7, 12, 5, 20, 9, 14, 8];
+
+            function oszthKvO() {
+                return szamok2.filter(szam => 
+                    (szam % 2 === 0 || szam % 5 === 0) && !(szam % 2 === 0 && szam % 5 === 0)
+                );
+            }
+
+            //Vagy szintén egy tömbbe tér visza így is:
+            /*
+                function oszthKvO() {
+                    const kettovel = szamok2.filter(szam => szam % 2 === 0 && szam % 5 !== 0);
+                    const ottel = szamok2.filter(szam => szam % 5 === 0 && szam % 2 !== 0);
+                    return [...kettovel, ...ottel]; // összeillesztjük a két tömböt
+                }
+
+            
+            */
+
+
+
+
+        </script>
+    </body>
+</html>
+
+

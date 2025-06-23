@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matekos 6 JS</title>
+</head>
+<body>
+
+    <script>
+
+        //Számjegyek növekvő és csökkenő sorrendben?
+        //Pl.: 123 → true, 321 → true, 132 → false
+
+        function novVagyCsokk(n){
+           const szammavalt=n.toString().split('').map(Number);
+
+           let nov=true;
+           let csokk= true;
+
+            for( let i=0; i < szammavalt.length -1; i ++){
+                if(szammavalt[i] < szammavalt[i+1]){ //szammavalt[i] < szammavalt[i + 1] esetén a csökkenés sérül, tehát csokk = false.
+                    csokk=false;
+                }
+                if(szammavalt[i] >szammavalt[i+1]){ //szammavalt[i] > szammavalt[i + 1] esetén a növekedés sérül, tehát nov = false.
+                    nov=false;
+                }
+                
+            
+            }
+            return nov || csokk; //A ciklus végén visszatérsz: nov || csokk – ha legalább az egyik igaz maradt, akkor a szám vagy növekvő vagy csökkenő sorrendű.
+
+        }
+        console.log(novVagyCsokk(163));
+        console.log(novVagyCsokk(351));
+        console.log(novVagyCsokk(123));
+        console.log(novVagyCsokk(321));
+
+        //Két tömb különbsége (azok az elemek, amelyek csak az első tömbben vannak)
+        //Pl.: [1,2,3], [2,3,4] → [1]
+
+        const tomb1=[1,2,3];
+        const tomb2=[2,3,4];
+
+        function kulonbsegKettomb(){
+            const hasonlo = tomb1.filter((szam)=>tomb2.includes(szam));//hasonlóak szűrése csak ellenőrzés véget
+            const kul = tomb1.filter((szam)=>!tomb2.includes(szam));//Külömbség szűrése ez az ami most kell nekünk.
+            return kul;
+           
+        }
+        console.log(kulonbsegKettomb());
+      
+
+
+
+
+        //Szám számjegyeinek szorzata
+        //Pl.: 234 → 2×3×4 = 24
+
+        function szamjegyekSzorzata(n){
+
+            const szamaalakit=n.toString().split('').map(Number);
+
+            const szorzat= szamaalakit.reduce((acc,curr)=>acc*curr);
+
+            return szorzat;
+        }
+        console.log(szamjegyekSzorzata(234));
+
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

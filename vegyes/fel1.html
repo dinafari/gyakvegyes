@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weboldal</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <!--Feladatleírás:
+        Készíts egy egyszerű weboldalt, amelyen:
+
+        Űrlapon keresztül lehet terméket rögzíteni: név, ár, készleten van-e (checkbox).
+
+        A felvitt termékek megjelennek egy táblázatban, amely dinamikusan frissül.
+
+        A termékeket színezze meg:
+
+        Zöld háttér, ha készleten van.
+
+        Piros háttér, ha nincs készleten.
+
+        Bootstrap 5 osztályokat használj (pl. form-control, btn, table, text-center, container, row, col-md-6, stb.)
+
+        A táblázat alatt jelenjen meg a készleten lévő termékek száma (darabszám). 
+    -->
+
+
+    <div class="container my-4">
+
+            <div class="row">
+                <div class="col-md-6 py-4">
+                    <h1>Termékek felvitele:</h1>
+
+                </div>
+            </div>
+
+
+            <form class="row">
+                <div class="mb-3">
+                    <label for="nev" class="form-label">Név</label>
+                    <input type="text" class="form-control" id="nev"name="nev" placeholder="Ird be a termék nevét">
+                </div>
+                <div class="mb-3">
+                    <label for="ar" class="form-label">Ár</label>
+                    <input type="number" class="form-control" id="ar" name="ar">
+                </div>
+                <div class="mb-3">
+                    <input class="form-check-input" type="checkbox"  id="keszleten" name="keszleten" checked>
+                    <label class="form-check-label" for="keszleten">Keszleten</label>
+
+                </div>
+                <div>
+                    <button type="button" class="btn btn-primary" onclick="felvitel()">Felvitel</button>
+                </div>
+               
+                
+            </form>
+
+            <div class="row py-4 text-center">
+                <div class="col-12">
+                    <table class="table table-striped">
+                       <thead class="table-dark">
+                            <tr>
+                                <th>Név</th>
+                                <th>Ár</th>
+                                <th>Készleten</th>
+                            </tr> 
+                       </thead>
+                       <tbody id="termekekTabla">
+                        
+                        </body>
+                    </table>
+                    <p id="keszletDarab" class="fw-bold mt-3"></p>
+                </div>
+            </div>
+
+
+    </div>
+    <script>
+        function felvitel(){
+            const nev= document.getElementById("nev").value.trim();
+            const ar = document.getElementById("ar").value;
+            const keszleten = document.getElementById("keszleten").checked;
+
+            if(!nev || !ar){
+                alert("Kérlek töltsd ki a nevet és az árat!");
+                return;
+            }
+            const tabla = document.getElementById("termekekTabla");
+            const ujsor = document.createElement("tr");
+
+            ujsor.innerHTML= `
+                <td>${nev}</td>
+                <td>${ar}</td>
+                <td>${keszleten ? 'igen':'nem'}</td> 
+               
+            
+            
+            
+            `;
+            ujsor.classList.add(keszleten ? "table-success" : "table-danger");
+            tabla.appendChild(ujsor); // uj sorok kinyerése a táblázaztban.
+
+            frissitDarabszam();//Frissitett db-ok szám függvény meghívása
+
+            // Mezők ürítése
+            document.getElementById("nev").value = "";
+            document.getElementById("ar").value = "";
+            document.getElementById("keszleten").checked = true;
+            
+
+
+        
+
+        }
+
+
+            function frissitDarabszam() { // Itt a frissített db-ok száma függvény amit meghívunk a gombnyomásra később
+                const sorok = document.querySelectorAll("#termekekTabla tr");
+                let db = 0;
+                sorok.forEach(sor => {
+                    if (sor.classList.contains("table-success")) db++;
+                });
+                document.getElementById("keszletDarab").innerText = `Készleten lévő termékek száma: ${db} db`;
+            }
+
+
+            
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+    
+</body>
+</html>
+
+

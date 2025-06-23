@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+</head>
+<body>
+    <script>
+
+        //1.Készíts HTML + JS-ben:egy számokból álló tömböt
+
+        //2. írj egy függvényt, ami visszaadja a legnagyobb páratlan számot a tömbből
+
+        //és írd ki console.log()-gal
+
+        const szamok=[1,2,3,20,7,99];
+
+        function legnParat(){
+            const parl= szamok.filter((szam)=>szam %2 !==0);
+            const legnagyobb=Math.max(...parl);
+            return legnagyobb;
+        }
+        console.log("A legnagyobb paratlan szám:",legnParat());
+
+    </script>
+    
+</body>
+</html>

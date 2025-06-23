@@ -1,0 +1,67 @@
+
+
+
+✅ Memoizált Fibonacci TypeScript-ben:
+
+
+function fibonacciMemo(): (n: number) => number {
+  const memo: { [kulcs: number]: number } = {};
+
+  function szamol(n: number): number {
+    if (n === 0) return 0;
+    if (n === 1) return 1;
+
+    if (memo[n] !== undefined) {
+      return memo[n];
+    }
+
+    memo[n] = szamol(n - 1) + szamol(n - 2);
+    return memo[n];
+  }
+
+  return szamol;
+}
+
+// Használat:
+const fibonacci = fibonacciMemo();
+
+console.log(fibonacci(6));  // → 8
+console.log(fibonacci(30)); // → 832040 gyorsan!
+console.log(fibonacci(50)); // → 12586269025 😍
+
+
+Memoizált faktoriális TypeScript-ben:
+
+
+function faktorialisMemo(): (n: number) => number {
+  const memo: { [kulcs: number]: number } = {};
+
+  function szamol(n: number): number {
+    if (n === 0 || n === 1) return 1;
+
+    if (memo[n] !== undefined) {
+      return memo[n];
+    }
+
+    memo[n] = n * szamol(n - 1);
+    return memo[n];
+  }
+
+  return szamol;
+}
+
+// Használat:
+const faktorialis = faktorialisMemo();
+
+console.log(faktorialis(5));  // → 120
+console.log(faktorialis(7));  // → 5040
+console.log(faktorialis(10)); // → 3628800
+
+
+
+
+
+
+
+
+

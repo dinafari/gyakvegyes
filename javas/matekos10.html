@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Matekos10</title>
+</head>
+<body>
+    <script>
+          /*     1.Tömb manipuláció (közepes)
+                Feladat:
+                Írj egy függvényt, amely egy számokat tartalmazó tömböt vár bemenetként,
+                 és visszaadja azt az új tömböt, amely csak 
+                 a páros számok négyzetgyökeit tartalmazza, egész számokra kerekítve lefelé!
+                Pl. [1, 4, 9, 16, 25, 36] → [2, 4, 6]
+        
+            */
+
+            const szamok=[1, 4, 9, 16, 25, 36];
+
+            function parosNegyzGYker(){
+                const paros= szamok.filter((szam)=>szam % 2==0);
+                const gyok=paros.map(szam=>Math.floor(Math.sqrt(szam)));//map()-el kigyüjtöd a párosszámok négyzetgyökét és Math.floor-al kerekíted majd Math.sqrt a négyzetgyökké alakítás
+                return gyok;
+              
+            }
+            console.log(parosNegyzGYker());
+
+            /*   2. JavaScript – Számok logikája
+                Írj egy függvényt, amely kiszámolja egy szám számjegyeinek különbségéből képzett új számot!
+
+                Pl.: n = 5832 → 8 - 2 = 6
+
+                Az n szám legnagyobb és legkisebb számjegye közti különbséget add vissza!
+
+            */
+
+            function legnLegkKozKul(n){
+                const szamma= n.toString().split('').map(Number);
+                const legn=Math.max(...szamma);
+                const legk= Math.min(...szamma);
+
+                const kul=legn-legk;
+                return kul;
+
+            }
+            console.log(legnLegkKozKul(5832));
+
+            //3. Páros számok szorzata
+            //Írj egy függvényt, amely visszaadja a tömb összes páros számának a szorzatát.
+            //Pl.: [2, 5, 4] → 2 * 4 = 8
+
+            const tomb1=[2, 5, 4];
+
+            function pszamokSzorz(){
+                const psz=tomb1.filter((szam)=>szam %2 ==0);
+                const szorz=psz.reduce((acc,curr)=>acc*curr);
+                return szorz;
+
+            }
+            console.log(pszamokSzorz(tomb1));
+
+            //4.Duplázd meg azokat, amelyek 10 alatt vannak
+            //Add vissza az új tömböt, amelyben minden 10 alatti szám duplázva van, a többi változatlan marad.
+            // Pl.: [3, 10, 15, 4] → [6, 10, 15, 8]
+
+            const tomb2=[3, 10, 15, 4]
+
+            function tizAlattDupla(){
+
+                return tomb2.map(szam => szam < 10 ? szam * 2 : szam);//Ez minden elemet vizsgál, és a feltétel szerint módosít, nem kell külön concat.
+
+
+                /*Ez akkor lenne jó ha teljesen új átalakiított tömböt kérne a feladat:
+                const ujtomb=[10,15];
+
+                const tizalattiak=tomb2.filter((szam)=>szam<10);
+                const dupla=tizalattiak.map(szam=>szam*2);
+                return dupla.concat(ujtomb);*/
+
+
+            }
+            console.log(tizAlattDupla(tomb2));
+
+            //5.Két tömb közös elemei (metszet)
+            //  Két tömbből add vissza egy új tömbben azokat az értékeket, amelyek mindkettőben megtalálhatók.
+            //Pl.: [1, 2, 3] és [2, 3, 4] → [2, 3]
+
+            const tomb3=[1, 2, 3];
+            const tomb4=[2, 3, 4];
+
+            function mindkettoBenvan(){
+
+                const tartalmaz= tomb3.filter((szam)=>tomb4.includes(szam));
+                return tartalmaz;
+            }
+            console.log(mindkettoBenvan(tomb3,tomb4));
+
+            //6.Hárommal osztható számok átlaga
+            //Számold ki, mennyi a 3-mal osztható számok átlaga egy tömbben.
+            //Pl.: [3, 6, 8, 9] → (3+6+9)/3 = 6
+
+            const tomb5=[3, 6, 8, 9];
+
+            function harommaloszthAtlag(){
+                const osztharom=tomb5.filter((szam)=>szam%3==0);
+                const osszeguk=osztharom.reduce((acc,curr)=>acc+curr);
+                return osszeguk/osztharom.length;
+
+
+            }
+            console.log(harommaloszthAtlag(tomb5));
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

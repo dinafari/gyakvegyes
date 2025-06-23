@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feladat9 JS</title>
+</head>
+<body>
+    <script>
+         //1. Számjegyek összege
+
+        // Készíts egy függvényt, amely egy szám számjegyeit összeadja.
+        // Pl: 543 → 5 + 4 + 3 = 12
+        function osszegSzamjegyekbol(szam) {
+            return szam
+            .toString()
+            .split('')
+            .map(Number)
+            .reduce((acc, ertek) => acc + ertek, 0);
+        }
+
+        console.log(osszegSzamjegyekbol(543)); //  12
+
+        /*Mit csinál ez?
+
+            .toString() → "543"
+
+            .split('') → ["5", "4", "3"]
+
+            .map(Number) → [5, 4, 3]
+
+            .reduce() → összeadja őket
+        */
+
+
+
+        //2. Első három osztható szám kiszűrése
+
+        // Írj egy függvényt, amely egy tömbből visszaadja az első három olyan számot,
+        // amely osztható 4-gyel és nem páros.
+        // Pl: [7, 8, 12, 16, 25, 20] → []
+
+        const tesztesetek1=[7, 8, 12, 16, 25, 20] 
+
+        function oszthato4ParatlanokElso3(szamok) {
+            return szamok
+            .filter(szam => szam % 4 === 0 && szam % 2 !== 0)
+            .slice(0, 3);
+        }
+
+        console.log(oszthato4ParatlanokElso3([7, 8, 12, 16, 25, 20])); //  [] // Mert nincs ilyren egész szám
+
+
+
+        
+    
+        //3.Páros számok négyzetgyöke
+
+        // Írj egy függvényt, amely egy tömb páros elemeinek négyzetgyökét adja vissza.
+        // Pl: [4, 9, 16, 25] → [2, 4]
+
+        const tesztesetek2=[4, 9, 16, 25] ;
+        function parosNegyzetgy(){
+            const eredm =tesztesetek2.filter(szam=>szam %2 ==0);
+            return eredm.map(szam=>Math.sqrt(szam));
+
+        }
+        console.log(parosNegyzetgy());
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

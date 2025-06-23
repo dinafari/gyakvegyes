@@ -1,0 +1,35 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="=width=device-width, initial-scale=1.0">
+        <title>Feladat 7.JS</title>
+    </head>
+    <body>
+        <script>
+            
+            /* Írj egy függvényt, amely:
+
+                const szamok = [2, 5, 8, 11, 14, 18, 20];
+
+                kiszűri azokat a számokat, amelyek párosak
+
+                majd visszaadja ezek négyzeteinek összegét
+
+                (pl. [2, 8] → 2² + 8² = 4 + 64 = 68)     
+            */
+           const szamok = [2, 5, 8, 11, 14, 18, 20];
+
+           function parosNegyzOszzeg(){
+                const paros= szamok.filter((szam)=>szam % 2==0)
+                .map(szam=>szam*szam)
+                .reduce((a,b)=>a+b);
+                return paros
+           }
+           console.log(parosNegyzOszzeg());
+
+        </script>
+        
+    </body>
+</html>
+
+

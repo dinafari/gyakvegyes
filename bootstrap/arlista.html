@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arlista-Bootstrap 5</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
+
+    <style>
+        td:hover{
+            background-color: crimson;
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+<body>
+    <!--  Hozz létre egy 2 oszlopos árlistát, ahol:
+
+        Az első oszlopban a szolgáltatás neve
+
+        A másodikban az ár
+
+        Használj table, table-striped, és table-bordered osztályokat 
+    -->
+
+    <div class="container my-4">
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-striped table-bordered text-center">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">Szolgáltatás neve</th>
+                            <th scope="col">Ára</th>
+                        </tr>
+
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="table-primary">Autoszerelés</td>
+                            <td class="table-danger">56000 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Auto Kozmetika</td>
+                            <td>3000 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Kárpit tisztítás</td>
+                            <td>40000 Ft</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+    
+    
+</body>
+</html>

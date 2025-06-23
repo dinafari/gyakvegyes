@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matekos 5</title>
+</head>
+<body>
+    <script>
+        //1.JavaScript – 3 matematikai-logikai feladat
+        //1.Számjegyek sorrendje csökkenő-e?
+        //Készíts függvényt, amely eldönti, hogy egy szám számjegyei csökkenő sorrendben vannak-e!
+        //Pl.: 963 → true, 932 → true, 921 → true, 934 → false; 349 false
+
+        function csokkenoE(n){
+           const szamma=n.toString().split('').map(Number);
+
+           for(let i = 0; i < szamma.length - 1; i++){
+                if(szamma[i]<= szamma[i+1]){
+                    return false;
+                }
+
+            }   
+            return true;
+
+        }
+        console.log(csokkenoE(349));// false
+
+
+
+
+
+
+        //2.Két szám közötti páratlan számok összege
+        //Írj függvényt, amely visszaadja két szám közötti (kizárva a széleket) páratlan számok összegét!
+        //Pl.: 3 és 9 → 5 + 7 = 12
+
+                                                                                                             
+            function paratlOszegeKozepsoke(x,y){
+
+                let legk=Math.min(x,y);
+                let legn=Math.max(x,y);
+
+                let osszeguk=0;
+      
+
+                for(let i=legk + 1; i < legn; i++){
+                    if(i % 2!==0){
+                        osszeguk+=i;
+
+                    }
+               
+                
+                
+                }
+                return osszeguk;
+            
+        
+          
+
+            }
+            console.log(paratlOszegeKozepsoke(3,9))// 12
+        
+
+
+
+
+        //3.Legtöbbször előforduló szám a tömbben
+        //Adott egy számokat tartalmazó tömb. Írj függvényt, ami visszaadja a legtöbbször előforduló számot!
+        //Pl.: [1, 2, 2, 3, 2, 4] → 2
+
+        //Ez a függvény itt sajnos csak egysszer vizsgálja az ismétlődést 
+        // de ha több szám is előfordulna azt már nem nézi:
+
+        /*const tomb3= [1, 2, 2, 3, 2, 4]; 
+
+        function legtobszSzam(){
+            const ismetlodo=tomb3.filter((szam,index)=>tomb3.indexOf(szam)!==index);//ahol két ugyan olyan értékű szám pl.2 indexe más mindig és azt szűröm ki.
+            const megoldas=[...new Set(ismetlodo)];
+            return megoldas;
+            
+
+        }
+        console.log(legtobszSzam(tomb3));*/
+
+        //Ez a megoldás jó:
+
+        function legtobszSzam(tomb) {
+            const gyak = {};
+            let maxSzam = tomb[0];
+
+            for (const szam of tomb) {
+                gyak[szam] = (gyak[szam] || 0) + 1;
+
+                if (gyak[szam] > gyak[maxSzam]) {
+                    maxSzam = szam;
+                }
+            }
+
+            return maxSzam;
+        }
+
+        const tomb3 = [1, 2, 2, 3, 2, 4];
+        console.log(legtobszSzam(tomb3)); //  2
+
+
+        
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

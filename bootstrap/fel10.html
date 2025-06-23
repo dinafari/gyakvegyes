@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap 5 – Tanfolyam lista grid-fel9.html</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
+
+    <style>
+        .card{
+            border-radius: 20px;
+            box-shadow: 10px 10px 10px rgba(176, 26, 26, 0.5);
+
+        }
+        .btn:hover{
+           background-color: brown;
+        }
+
+        #hatter{
+            background-color: black;
+            border-radius:20px;
+            box-shadow:10px 10px 10px rgba(0, 0,0,0.2);
+        }
+
+        body{
+            background-color: rgb(20, 2, 20);
+        }
+    </style>
+</head>  
+<body>
+
+    <!--     Feladat:
+        Készíts egy Bootstrap 5 grid elrendezést, ahol 3 kártya jelenik meg:
+
+        Cím: különböző tanfolyamok neve
+
+        Leírás: néhány szó
+
+        Ár
+
+        Kép
+
+        Gomb: „Jelentkezem”
+        Használj: container, row, col-md-4, card, btn osztályokat
+    -->
+    <div class="container my-4" id="hatter">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card text-center" style="background-color:bisque;">
+                    <img src="ora.jpg" alt="Ora" style="object-fit: cover; height: 300px;" class="img-fluid card-img-top">
+                    <div class="card-body">
+
+                        <h5 class="card-title">Óra javító tanfolyam</h5>
+                        <p class="card-text">Ez egy nagyszerű és izgalmas tanfolyam</p>
+                        <p class="card-text fw-bold">Ára:7299 Ft/hó</p>
+
+                    </div>
+
+                    <div class="co-12 py-4 mx-auto">
+                        <button type="button" class="btn btn-primary">Jelentkezem</button>
+                    </div>
+
+
+                </div>
+                
+               
+            </div>
+
+
+
+            <div class="col-md-4">
+                <div class="card text-center" style="background-color: bisque;">
+                    <img src="strawberrycake.jpg" alt="Eper" style="object-fit: cover; height: 300px;" class="img-fluid card-img-top">
+                    <div class="card-body">
+
+                        <h5 class="card-title"> Tortakészítő tanfolyam</h5>
+                        <p class="card-text">Klasszikus cukrász tanfolyam az igazi nagyoktól</p>
+                        <p class="card-text fw-bold">Ára:11599 Ft/hó</p>
+
+                    </div>
+
+                    <div class="co-12 py-4 mx-auto">
+                        <button type="button" class="btn btn-primary">Jelentkezem</button>
+                    </div>
+
+
+                </div>
+                
+               
+            </div>
+
+
+
+
+            <div class="col-md-4">
+                <div class="card text-center" style="background-color: bisque;">
+                    <img src="konyv2.jpg" alt="Konyv2" style="object-fit: cover; height: 300px;" class="img-fluid card-img-top">
+                    <div class="card-body">
+
+                        <h5 class="card-title">Könyvkötő tanfolyam</h5>
+                        <p class="card-text">A régi könyvkötés rejtelmeinek elsajátítása</p>
+                        <p class="card-text fw-bold">Ára:4299 Ft/hó</p>
+
+                    </div>
+
+                    <div class="co-12 py-4 mx-auto">
+                        <button type="button" class="btn btn-primary">Jelentkezem</button>
+                    </div>
+
+
+                </div>
+                
+               
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    
+</body>
+</html>

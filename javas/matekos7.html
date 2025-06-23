@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matekos7</title>
+</head>
+<body>
+    <script>
+
+        //1.Írj egy függvényt, amely megvizsgálja, hogy egy szám minden számjegye különböző-e!
+        //Pl.: 123 → true, 112 → false
+
+
+
+        function mindenKulszamJ(n){ 
+           
+            const szamma= n.toString().split('');
+
+            const egyedi= szamma.filter(szam=>szamma.indexOf(szam)==szamma.lastIndexOf(szam));
+            const ismetlodo= szamma.filter(szam=>szamma.indexOf(szam)!==szamma.lastIndexOf(szam));
+            if (ismetlodo.length > 0) {
+                return false; // tehát nem minden számjegy különböző
+            }else {
+                return true;
+
+            }
+            
+
+            
+        
+        }
+        console.log(mindenKulszamJ(112));//False tehát nem különböző
+        console.log(mindenKulszamJ(123))//True tehát külömböző
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

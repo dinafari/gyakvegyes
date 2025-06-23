@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feladat4 Js</title>
+</head>
+<body>
+    <script>
+        //4. JavaScript – 4 matematikai-logikai feladat
+        //1.Kérj be 2 számot, és írd ki a legkisebbet
+        const tesztesetek=[2,5];
+
+        function legkisebb(){
+            const legk=Math.min(...tesztesetek);
+            return legk;
+
+        }
+        console.log(legkisebb(tesztesetek));
+
+
+
+
+
+        //2.Számold ki egy szamok tömbben a negatív számok számát
+
+        const negativsz=[-1,-3,4,11,9];
+
+        function negszamDb(){
+            const neg= negativsz.filter((szam)=>szam < 0).length;
+            return neg;
+        }
+
+        console.log(negszamDb() + "db");
+
+        //3.Kérj be egy számot, és döntsd el, páros vagy páratlan
+
+        function parosvPAr(n){
+            if(n % 2 ==0){
+                return "paros";
+            }
+            if(n % 2 !==0){
+                return "paratlan";
+            }
+
+        }
+        console.log(parosvPAr(2));
+
+        //4.Írj függvényt, amely visszaadja a számjegyek összegét (pl. 123 → 
+
+        const szamjegyek=[1,2,3,55];
+
+        function osszeguk(){
+           const oszz= szamjegyek.reduce((acc,curr)=>acc+curr);
+           return oszz; 
+        }
+        console.log(osszeguk());
+    </script>
+    
+</body>
+</html>

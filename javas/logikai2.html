@@ -1,0 +1,177 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Logikai 2 Javascript</title>
+    </head>
+    <body>
+        <script>
+            //1. Páros számok összege
+            // Írj egy függvényt, amely egy tömb páros számait összegzi!
+            //Bemenet: [2, 5, 8, 11, 14] → Kimenet: 2 + 8 + 14 = 24
+
+            const bemenet1=[2,5,8,11,14];
+
+            function parosOsszgez(){
+                const paros= bemenet1.filter((szam)=>szam % 2 == 0);
+                return paros.reduce((a,b)=>a+b);
+
+            }
+            console.log("A tömb páros számainak összege:",parosOsszgez());
+
+            //2. Osztható, de nem közös osztható
+            //Add vissza a tömb azon elemeit, amelyek oszthatók 3-mal vagy 4-gyel, de nem mindkettővel!
+            //Bemenet: [3, 4, 6, 8, 12, 13, 15] → Kimenet: [3, 4, 6, 8, 15] 
+
+            const bemenet2=[3, 4, 6, 8, 12, 13, 15];
+
+
+            function osztHaromVNegy(){
+                
+
+              return bemenet2.filter(szam=>(szam % 3 ==0 || szam % 4 ==0) &&!(szam %3==0 && szam % 4==0 ));
+              //azt jelenti, hogy :szam oszthato 3-mal vagy néggyel és szam nem oszthato 3-al és néggyel is egyszerre!
+              // Bontsuk le részletesen:
+
+                /* 1. (szam % 3 === 0 || szam % 4 === 0)
+                    Igaz, ha a szám osztható 3-mal VAGY 4-gyel.
+
+                    2. !(szam % 3 === 0 && szam % 4 === 0)
+                 Igaz, ha NEM osztható egyszerre 3-mal ÉS 4-gyel is.
+                */
+                
+                
+                
+
+            }
+            console.log("Csak egyik osztóval(4 vagy 3) osztható számok:",osztHaromVNegy());
+
+
+
+            //3. Különbségek négyzete
+            // Írj egy függvényt, amely két szám különbségének négyzetét adja vissza!
+            //Bemenet: 10, 6 → Kimenet: (10 - 6)² = 16
+
+            //4.Két szám közötti távolság (abszolút különbség)
+
+
+            //Írj egy függvényt, amely visszaadja két szám közötti távolságot (abszolút különbséget).
+            //Példa: 5 és 12 → 7
+
+           
+
+            function negyzKulombs(a,b){
+                const  kulonbseg=a-b;
+                return kulonbseg*kulonbseg;
+              
+              
+            }
+            console.log("Különbség négyzete:",negyzKulombs(10,6));// 16
+
+            function tavolsag(a, b) {
+                return Math.abs(a - b);
+            }
+
+            console.log("A két szám közötti távolság:", tavolsag(5, 12)); // 7
+
+
+
+            //5.Két szám négyzetének különbsége
+
+            //Írj egy függvényt, amely visszaadja két szám négyzetének különbségét:
+            //Pl. a² - b²
+            //Példa: 6 és 2 → 36 - 4 = 32
+
+            function negyzetKulonbseg(a, b) {
+                return (a * a) - (b * b);
+            }
+
+            console.log("A négyzetek különbsége:", negyzetKulonbseg(6, 2)); // 32
+
+            //Két egész szám szorzatának a négyzete páros e vagy páratlan függvény
+
+            function ketszszozParosvParatl(a,b){
+                const szorz= (a*b)*(a*b);
+             
+                if(szorz % 2==0){
+                    return  szorz + "Páros"
+                }else{
+                    return  szorz+ "Páratlan"
+                }
+
+            }
+            console.log(ketszszozParosvParatl(2,10));
+
+            /*1. Két szám összege osztható-e 3-mal?
+                Feladat:
+                Írj egy függvényt, amely eldönti, hogy két szám összege osztható-e 3-mal.
+                Ha igen, adja vissza: "Osztható 3-mal"
+                Ha nem: "Nem osztható 3-mal"
+
+                Példa:
+                (4, 5) → 9 → Osztható
+                (2, 7) → 9 → Osztható
+                (2, 4) → 6 → Osztható
+                (2, 5) → 7 → Nem osztható
+                
+            */
+
+            function oszthHaromIgenNem(a,b){
+
+                const osszege = a+b;
+                
+                if(osszege %3 ==0){
+                    return osszege + "Oszthato" //return `${osszege} → Osztható 3-mal`; Így is lehet :)
+                }else{
+                    return osszege + "Nemoszthato" //return `${osszege} → Nem osztható 3-mal`;
+                }
+
+            }
+            console.log("A két szám összege:",oszthHaromIgenNem(3,5) +"hárommal");
+
+
+
+            /*
+                2. Két szám szorzata negatív szám-e?
+                Feladat:
+                Írj egy függvényt, amely visszaadja, hogy két szám szorzata negatív szám-e vagy sem.
+                Visszatérési érték lehet "Negatív szorzat" vagy "Nem negatív szorzat"
+
+              Példa:
+
+                (3, -4) → -12 → Negatív szorzat
+                (-2, -6) → 12 → Nem negatív
+                (5, 0) → 0 → Nem negatív
+                (2, 3) → 6 → Nem negatív
+            
+            
+            */
+
+            function negativSzozatvNem(a,b){
+
+                const szorzatuk=a*b;
+
+                if(szorzatuk >=0){
+                    return szorzatuk +"Nem negatív"
+                }else{
+                    return szorzatuk+ "Negatív"
+                }
+
+            }
+            console.log("A két szám szorzata:",negativSzozatvNem(3,-1));
+
+
+
+
+
+
+
+
+
+
+
+
+        </script>
+        
+    </body>
+</html>

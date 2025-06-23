@@ -1,0 +1,117 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Feladat 3</title>
+    </head>
+    <body>
+        <script>
+            // 1.Írj egy függvényt, amely visszaadja az első három páros szám négyzetét egy tömbből
+            // Bemenet: [1, 2, 4, 3, 6, 8] → Kimenet: [4, 16, 36]
+
+
+            const tomb=[1, 2, 4, 3, 6, 8];
+
+            function elsoharNegyz(){
+                const paros= tomb.filter(szam=>szam % 2 ==0);//páros  szamok szűrése új tömb;
+                const szam =3;//3-ig megy a számolás ezután;
+                const eharom = paros.slice(0,szam);//elso harom páros szamot adja vissza;
+                const negyzetuk= eharom.map(function(n){return n*n;});// első három szám négyzetetét "kimappázza" a tömbből;
+                return negyzetuk;//map(function(n){return n*n;})rövidíthető a map(n => n * n) alakra.
+                
+            }
+            console.log(elsoharNegyz());
+
+            //2.Készíts egy függvényt, amely visszaadja a tömbben található prímszámokat!
+            // Példa: [2, 4, 5, 6, 7, 8, 9, 11] → [2, 5, 7, 11]
+
+            var a = [2, 4, 5, 6, 7, 8, 9, 11] // Ezt is találtam és működik de nem teljesen értem,lehet rajta egyszerűsíteni?
+            var prime = [];
+
+            function isPrime(item) {
+                var identifier = item / 2;
+                    for (var j = 2; j <= identifier; j++) {
+                        if ((item % j) == 0) { // modulous
+                            return false;
+                        } 
+                    }
+                    return true;
+                }
+                for (var index = 0; index < a.length; index++) {
+                    if (isPrime(a[index])) {
+                        prime.push(a[index])
+                    }
+                }
+
+            console.log(prime);
+
+            //Vagy így egyszerűbb:
+           /* function primSzamok(tomb) {
+                return tomb.filter(szam => {
+                    if (szam < 2) return false;
+                        for (let i = 2; i <= Math.sqrt(szam); i++) {
+                        if (szam % i === 0) return false;
+                    }
+                    return true;
+                });
+            }
+
+            console.log(primSzamok([2, 4, 5, 6, 7, 8, 9, 11])); // → [2, 5, 7, 11]*/
+ 
+            
+
+            
+
+
+            // 3.Készíts egy függvényt, amely visszaadja egy adott szám faktoriálisát!
+            // Pl. 5! = 5*4*3*2*1 = 120
+
+            function factorial(number) {// itt még a sort b-a novekvoből csökkenő és a reduce a*b volt amire gondoltam, hogy jó lehetne
+                let kezdoe = 1;
+                for (let index = 1; index <= number; index++) {
+                    kezdoe *= index; 
+                }
+                return kezdoe;
+            }
+            console.log(factorial(5));
+
+            //Vagy így is lehet:
+            /*function factorialReduce(n) {
+                return Array.from({ length: n }, (_, i) => i + 1)
+                            .reduce((acc, curr) => acc * curr, 1);
+            }*/
+
+
+            
+
+            //4. Készíts egy függvényt, amely egy tömbből a páros számokat duplázza, a többieket elhagyja
+            // Bemenet: [1, 2, 3, 4] → Kimenet: [4, 8]
+
+            const bemenet= [1, 2, 3, 4];
+
+            function parosDuplaz(){
+                const paros= bemenet.filter(szam=> szam %2 ==0);
+                const dupla = paros.map(function(n){return n*2;});
+                return dupla;
+
+            }
+            console.log(parosDuplaz());
+
+            //Vagy így is rövidítheted:
+            /*function parosDuplaz(){
+                return bemenet.filter(szam => szam % 2 === 0).map(szam => szam * 2);
+            }*/
+
+
+
+
+
+
+
+
+
+        </script>
+        
+
+    </body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Junius-logikai-Javascript</title>
+</head>
+<body>
+    <script>
+
+        //1.Két szám közös többszöröseinek listája (max 1000-ig)
+        //2-től 1000-ig kilistázza őket
+      
+        function kozosTobbszorosok(x, y) {
+            const eredmeny = [];
+            for (let i = 1; i <= 1000; i++) {
+                if (i % x === 0 && i % y === 0) {
+                    eredmeny.push(i);
+                }
+            }
+            return eredmeny;
+        }
+        console.log(kozosTobbszorosok(12, 18));
+
+
+        //2.Tükörpárok kiszűrése egy tömbből (pl. [12, 21, 34, 43] → [12, 21, 34, 43])
+
+        function tukorparok(tomb){
+
+            const eredm = [];
+            const tombSet = new Set(tomb.map(szam => szam.toString()));
+
+            tomb.forEach(szam => { 
+                const tukor=szam.toString().split('').reverse().join('');
+
+                if (tombSet.has(tukor) && !eredm.includes((szam))) {
+                    eredm.push(szam);
+                }
+            });
+            return eredm;
+         
+        }
+        console.log(tukorparok([12, 21, 34, 43]));
+
+
+
+        //3.Hányszor fordul elő egy adott szám egy tömbben?
+
+        function hanyszor(tomb2){
+            const eredmeny = {};
+
+            tomb2.forEach(szam => {
+                eredmeny[szam] = (eredmeny[szam] || 0) + 1;
+            });
+
+            return eredmeny;
+        }
+        console.log(hanyszor([12, 12, 34, 43]));
+
+
+
+
+        //4.A számjegyek összege négyzetszám-e? (pl. 49 → 4+9=13 → nem)
+
+        function szamjegyekOsszegeNegyzetszam(n){
+
+            const osszeg = n.toString().split('').map(Number).reduce((acc, curr) => acc + curr);
+            const gyok = Math.sqrt(osszeg);
+            return gyok === Math.floor(gyok); // négyzetszám, ha egész a gyök 
+            //tehát ha a gyök  egyenlő a kerekített gyökkel, tehát ha a gyök egész szám
+           
+        }
+        console.log(szamjegyekOsszegeNegyzetszam(49)); // false, mert 4+9 = 13, nem négyzetszám
+        console.log(szamjegyekOsszegeNegyzetszam(81)); // true, mert 8+1 = 9, ami 3²
+
+
+
+
+    </script>
+    
+</body>
+</html>

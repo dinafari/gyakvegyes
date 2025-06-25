@@ -1,0 +1,52 @@
+
+<!--  Szűrhető tanfolyamlista
+    Feladat:angutanfolyam mappában
+    Hozz létre egy komponenst, ahol:
+
+    Egy input mezővel a felhasználó beírhat egy minimum árat
+
+    A tanfolyamok tömböt szűrjük úgy, hogy csak a megadott összegnél drágább tanfolyamok jelenjenek meg
+
+    *ngFor-ral jelenítsd meg a nevüket és árukat.
+-->
+
+<div class="container my-4">
+    <div class="row">
+        <div class="col-12">
+            <h1>Tanfolyamok: Szűrhető tanfolyamlista</h1>
+
+        </div>
+    </div>
+    <form class="row">
+        <div class="mb-4 form-group">
+            <label for="ar" class="form-label">Ár:</label>
+            <input type="number"  [(ngModel)]="ar" name="ar" id="ar" class="form-control">
+        </div>
+        <div class="col-12 py-4">
+            <button type="button" class="btn btn-primary"  id="keres" name="keres" (click)="keres()">Keres</button>
+
+        </div>
+
+
+
+    </form>
+
+    <div class="row my-4">
+        <div class="col-12">
+            <ul>
+                <li *ngFor="let tanfolyam of tanfolyamok">
+                    {{tanfolyam.ar}}-{{tanfolyam.nev}}
+                </li>
+            </ul>
+        </div>
+    </div>
+  
+
+   
+
+
+
+
+
+
+</div>

@@ -1,0 +1,46 @@
+
+
+<div class="container my-4">
+    <div class="row">
+        <div class="col-12">
+            <h1>Tanfolyamok</h1>
+        </div>
+    </div>
+
+    <form class="row">
+        <div class="mb-3 form-group">
+            <label for="tanfolyamneve" class="form-label">Tanfolyam neve:</label>
+            <input type="text" [(ngModel)]="tanfolyamneve"  class="form-control" id="tanfolyamneve" name="tanfolyamneve" placeholder="Írd ide a tanfolyam nevét">
+        </div>
+
+        <div class="col-12 py-4">
+            <button type="button" class="btn btn-primary" (click)="hozzaad()"  id="hozzaad" name="hozzaad" >Hozzáad</button>
+        </div>
+       
+        
+    </form>
+
+    <div class="row my-4 ">
+        <div class="col-12">
+            <table class="table table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Tanfolyam neve:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let tanfolyam of tanfolyamok">
+                        <td>{{tanfolyam.tanfolyamneve}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+
+
+
+
+</div>

@@ -1,0 +1,53 @@
+<div class="container my-4">
+    <div class="row">
+       <div class="col-12">
+            <h1>Termek hozzáadas</h1>
+       </div>
+    </div>
+
+    <form class="row">
+        <div class="mb-3 form-group">
+            <label for="nev" class="form-label">Név</label>
+            <input type="text" [(ngModel)]="nev" class="form-control" id="nev" name="nev">
+
+        </div>
+        <div class="mb-3 form-group">
+            <label for="ar" class="form-label">Ár</label>
+            <input type="number" [(ngModel)]="ar" class="form-control" id="ar" name="ar">
+
+        </div>
+        <div class="col-12 py-4">
+            <button type="button" class="btn btn-primary"  id="hozzaad" name="hozzaad" (click)="hozzaad()">Hozzáad</button>
+        </div>
+
+
+
+    </form>
+
+    <div class="row my-4">
+        <div class="col-12">
+            <table class="table table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Név</th>
+                        <th>Ár</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let termek of termekek">
+                        <td>{{termek.nev}}</td>
+                        <td>{{termek.ar}}</td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+
+
+
+
+
+
+
+</div>

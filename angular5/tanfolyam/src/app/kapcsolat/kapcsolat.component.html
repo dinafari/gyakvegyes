@@ -1,0 +1,47 @@
+<div class="container my-4">
+    <div class="row">
+        <div class="col-12">
+            <h1>Kapcsolat</h1>
+        </div>
+    </div>
+
+
+    <form class="row">
+        <div  class="mb-3 form-group">
+            <label  class="form-label"  for="nev">Név:</label>
+            <input type="text" [(ngModel)]="nev"     class="form-control" id="nev" name="nev" placeholder="Írd ide a teljes neved!">
+        </div>
+        <div  class="mb-3 form-group">
+            <label  class="form-label"  for="emailcim">Email cím:</label>
+            <input type="email"  [(ngModel)]="emailcim" class="form-control" id="emailcim" name="emailcim" placeholder="gombocartur@freemail.com">
+        </div>
+        <div class="col-12 py-4">
+            <button class="btn btn-primary" type="button" id="kuldes" name="kuldes" (click)="kuldes()">Küldés</button>
+        </div>
+    </form>
+
+    <div class="row my-4">
+        <div class="col-12">
+            <table  class="table table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Név</th>
+                        <th>Email cím</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let kapcsolat of kapcsolatok">
+                        <td>{{kapcsolat.nev}}</td>
+                        <td>{{kapcsolat.emailcim}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+
+
+
+
+</div>

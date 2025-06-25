@@ -1,0 +1,79 @@
+<!--   Angular
+    Feladat: 
+    Készíts egy „KönyvAdmin” komponenst:
+
+    Felvitel: könyv címe és szerzője (két input)
+
+    Listázás: *ngFor segítségével jelenítsd meg a könyveket
+
+    Szűrés: csak azok jelenjenek meg, amelyek címe tartalmaz egy megadott kifejez
+-->
+<div class="container my-4">
+    <div class="row">
+        <div class="col-12">
+            <h1>KonyvAdmin</h1>
+
+        </div>
+    </div>
+
+
+
+    <form class="row">
+        <div class="mb-3 form-group">
+            <label for="cime"  class="form-label">Keresett cime</label>
+            <input type="text"  [(ngModel)]="keresettCim"  class="form-control"  name="keresettCim" id="keresettCim">
+
+        </div>
+        <div class="mb-3 form-group">
+            <label for="szerzoje" class="form-label">Keresett szerzoje:</label>
+            <input type="text"  [(ngModel)]="keresettSzerzo"  class="form-control"  name="keresettSzerzo" id="keresettSzerzo">
+        </div>
+        <div class="mb-3 form-group">
+            <label for="cime"  class="form-label">Könyv cime</label>
+            <input type="text"  [(ngModel)]="cime"  class="form-control"  name="cime" id="cime">
+
+        </div>
+        <div class="mb-3 form-group">
+            <label for="szerzoje" class="form-label">Szerzője</label>
+            <input type="text"  [(ngModel)]="szerzoje"  class="form-control"  name="szerzoje" id="szerzoje">
+        </div>
+        <div class="col-12 py-4">
+            <button type="button" class="btn btn-primary" id="listazas" name="listazas" (click)="listazas()">Listazas</button>
+        </div>
+        <div class="col-12 py-4">
+            <button type="button" class="btn btn-primary" id="szures" name="szures" (click)="szures()">Szűrés</button>
+        </div>
+
+    </form>
+
+
+
+
+
+
+
+
+
+
+
+    <div class="row my-4">
+        <div class="col-12">
+            <ul>
+                <li *ngFor="let konyv of konyvek">{{konyv.cime}}-{{konyv.szerzoje}}</li>
+            </ul>
+            
+          
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+</div>

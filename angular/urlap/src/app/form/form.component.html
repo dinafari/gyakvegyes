@@ -1,0 +1,50 @@
+<!-- 6.Angular
+Készíts egy Angular formot, ahol:
+
+2 mezőt tölthetünk ki: termék neve és ára
+
+ha rákattintunk a "Hozzáadás" gombra, a termék bekerül egy táblázatba
+ 
+-->
+<div class="container my-4">
+    <div class="row">
+        <div class="col-12">
+            <h2>Form</h2>
+        </div>
+
+    </div>
+    <form class="row">
+        <div class="mb-3">
+            <label for="neve" class="form-label">Termek neve:</label>
+            <input  [(ngModel)]="neve"  type="text" class="form-control" id="neve" placeholder="Írd ide a termek nevét!" name="neve">
+          </div>
+          <div class="mb-3">
+            <label for="ara" class="form-label">Termek ara:</label>
+            <input [(ngModel)]="ara"  type="number" class="form-control" id="ara" placeholder="A termek ára" name="ara" >
+        </div>
+        <div class="col-12">
+            <button (click)="hozzaadas()"type="button" class="btn btn-primary"  id="hozzaadas" name="hozzaadas">Hozáadás</button>
+        </div>
+
+
+    </form>
+
+    <div class="row mt-3">
+        <div class="col-12">
+            <table class="table table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Termek neve</th>
+                        <th>Termek ara</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let form of formok">
+                        <td>{{form.neve}}</td>
+                        <td>{{form.ara}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

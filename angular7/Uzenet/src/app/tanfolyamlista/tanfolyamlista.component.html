@@ -1,0 +1,56 @@
+<!--    6. Angular – Tanfolyam lista komponens
+    Készíts egy új komponenst: TanfolyamLista
+
+    
+    Legyen két input mező: név, ár
+
+    Felvitel gombbal hozzáadod a tanfolyamot egy ul listához
+
+    Minden listában szereplő elem: Név – Ár
+
+    FormsModule szükséges! 
+-->
+<div class="container my-4">
+    <div class="row">
+        <div class="col-12">
+            <h1>Tanfolyamlista</h1>
+        </div>
+    </div>
+
+    <form class="row">
+        <div class="mb-3 form-group">
+            <label for="nev" class="form-label">Név:</label>
+            <input type="text" [(ngModel)]="nev" name="nev" id="nev" class="form-control">
+
+        </div>
+        <div class="mb-3 form-group">
+            <label for="ar" class="form-label">Ár:</label>
+            <input type="number"  [(ngModel)]="ar" name="ar" id="ar" class="form-control">
+
+        </div>
+        <div>
+            <button type="button" class="btn btn-primary" name="felvitel" id="felvitel" (click)="felvitel()">Felvitel</button>
+        </div>
+
+    </form>
+
+    <div class="row my-4">
+        <div class="mb-3">
+            <ul>
+                <li *ngFor="let tanfolyam of tanfolyamok">
+                    {{tanfolyam.nev}}-{{tanfolyam.ar}} Ft
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+</div>

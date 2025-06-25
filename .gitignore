@@ -1,29 +1,36 @@
-# Angular kizárások
-/node_modules/
-/dist/
-/.angular/
-/.angular-cache/
+# 🔒 Általános kizárások
+node_modules/
+dist/
+.angular/
+.angular-cache/
+.DS_Store
+Thumbs.db
+*.log
 
-# Csak Angular app mappa engedélyezése
-/src/*
-!/src/app/**
-!/src/app/*
+# 🔐 Environment fájlok (biztonság miatt)
+src/environments/
 
-# Bootstrap – képek kizárása
+# 🧪 Teszt fájlok kizárása
+*.spec.ts
+
+# 📷 Képek kizárása (ha nincs rá szükség a projektekben)
 *.jpg
 *.jpeg
+*.png
+*.gif
+*.svg
 
-# Node.js – minden maradhat
-
-# Szövegfájlok kizárása
+# 📄 Saját jegyzetek kizárása
 leiras.txt
 vizsgaminta.txt
 hf.txt
 
-# Általános kizárások
-.DS_Store
-Thumbs.db
-*.log
+# 🔧 Fordítási beállítás-mentések
+*.map
+
+# 💻 OS és editor saját fájlok
+.vscode/
+.idea/
 
 # Git saját mappa
 .git

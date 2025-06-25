@@ -1,0 +1,75 @@
+<!--   Feladat:
+    Hozz létre egy új komponenst: velemeny-hozzaadas, amely tartalmaz:
+
+    egy textarea mezőt, ahova véleményt lehet írni
+
+    egy Hozzáadás gombot
+
+    és egy táblázatot, amely kilistázza a hozzáadott véleményeket (dátum + szöveg)
+-->
+
+
+
+<div class="container my-4">
+
+
+
+    <div class="row">
+        <div class="col-12">
+            <h1>Vélemeny hozzáadas</h1>
+
+        </div>
+    </div>
+
+
+    <form class="row">
+        <div class="mb-3 form-group">
+            <label for="nev"  class="form-label">Név</label>
+            <input type="text"  [(ngModel)]="nev" class="form-control" name="nev" id="nev">
+        </div>
+        <div class="mb-3 form-group">
+            <label for="velemeny"  class="form-label">Vélemény</label>
+            <textarea class="form-control" [(ngModel)]="velemeny" name="velemeny" id="velemeny" rows="5"></textarea>
+        </div>
+        <div class="col-12 py-4">
+            <button type="button" class="btn btn-primary" name="hozzaadas" id="hozzaadas" (click)="hozzaadas()">Hozzáadas</button>
+
+        </div>
+    </form>
+
+    <div class="row my-4">
+        <div class="col-12">
+            <table class="table table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Név</th>
+                        <th>Vélemény</th>
+                        <th>Dátum</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let velemeny of velemenyek">
+                        <td>{{velemeny.nev}}</td>
+                        <td>{{velemeny.velemeny}}</td>
+                        <td>{{velemeny.datum | date:'yyyy.MM.dd HH:mm' }}</td>
+                    </tr>
+                </tbody>
+            </table>
+           
+
+        </div>
+
+    </div>
+   
+
+
+
+
+
+
+
+
+
+
+
+</div>

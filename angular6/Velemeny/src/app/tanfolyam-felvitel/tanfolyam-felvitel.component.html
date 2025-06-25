@@ -1,0 +1,50 @@
+<!--  Angular
+    Készíts egy új komponenst:
+
+    TanfolyamFelvitel
+
+    Név, ár mezők + gomb
+
+    A gombbal listaelemként jelenjen meg egy <ul>-ben minden felvett tanfolyam (név - ár)
+-->
+
+<div class="container my-4">
+    <div class="row">
+        <div class="col-12">
+            <h1>Tafolyam felvitel</h1>
+        </div>
+    </div>
+
+    <form class="row">
+        <div class="mb-4 form-group">
+            <label for="nev" class="form-label">Név</label>
+            <input type="text" [(ngModel)]="nev" class="form-control" id="nev" name="nev">
+
+        </div>
+        <div class="mb-4 form-group">
+            <label for="ar" class="form-label">Ár</label>
+            <input type="number" [(ngModel)]="ar"  class="form-control" id="ar" name="ar">
+
+        </div>
+        <div class="col-12 my-4">
+            <button type="button" class="btn btn-primary" name="felvitel" id="felvitel" (click)="felvitel()">Felvitel</button>
+        </div>
+
+
+    </form>
+
+    <div class="row my-4">
+        <div class="col-12">
+            <ul>
+                <li *ngFor="let tanfolyam of tanfolyamok">{{tanfolyam.nev}} : {{tanfolyam.ar}}</li>
+            </ul>
+
+        </div>
+    </div>
+
+   
+
+
+
+
+</div>

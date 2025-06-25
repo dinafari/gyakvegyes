@@ -1,0 +1,59 @@
+<!--Angular – Lista szűrés
+    Feladat:
+    Készíts egy Angular komponenst, ahol:
+
+    van egy szövegbeviteli mező
+
+    egy ul listában jelenik meg az összes név
+
+    szűrődik real-time, ahogy gépeli a felhasználó
+
+    Használj: [(ngModel)], *ngFor, filter() metódus
+-->
+
+
+<div class="container my-4">
+
+
+
+    <div class="row">
+        <div class="col-12">
+            <h1>Szövegbevitel</h1>
+        </div>
+    </div>
+
+
+   
+    <form class="row">
+        <div class="mb-3 form-group">
+            <label for="szovegbevilet"  class="form-label">Keresés</label>
+            <input type="text"  [(ngModel)]="szovegbevitel"  name="szovegbevitel" id="szovegbevitel"  class="form-control" placeholder="Írj be egy nevet">
+        </div>
+        
+
+    </form>
+
+    <div class="row my-4">
+
+        <div class="col-12">
+            
+            <ul class="list-group">
+              
+                <li class="list-group-item" *ngFor="let nev of szurtnevek">{{nev}}</li>
+            
+           
+            </ul>
+        </div>
+        
+    </div>
+
+
+
+
+        
+       
+
+
+
+
+</div>

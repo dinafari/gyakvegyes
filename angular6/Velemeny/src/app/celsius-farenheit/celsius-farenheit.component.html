@@ -1,0 +1,37 @@
+<div class="container my-4">
+    <div class="row">
+        <div class="col-12">
+            <h1>Celsius-Fahrenheit átváltás:</h1>
+        </div>
+    </div>
+
+    <form class="row">
+        <div class="mb-3 mx-auto form-group">
+            <label for="celsius" class="form-label">Hőfok Celsiusban:</label>
+            <input type="text"   [(ngModel)]="celsius" name="celsius" id="celsius" placeholder="Írd ide a Celsius hőfokot!" class="form-control" >
+
+        </div>
+        <div class="col-12 py-4 mx-auto">
+            <button class="btn btn-primary" type="button" id="atvalt" name="atvalt" (click)="atvalt()">Átvált</button>
+        </div>
+
+        
+    </form>
+
+    <div class="row my-4">
+        <div class=" col-12">
+            <ul *ngFor="let hofok of hofokok">
+                <li>{{hofok.celsius}} °c = {{hofok.fahrenheit}} °F</li>
+            </ul>
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+</div>

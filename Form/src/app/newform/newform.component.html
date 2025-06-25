@@ -1,0 +1,61 @@
+
+<!-- 6. Angular
+Feladat:
+Készíts egy új Angular formot:
+
+Két mező legyen: email (szöveg), üzenet (textarea)
+Ha a „Küldés” gombra kattintasz, az adat jelenjen meg egy táblázatban
+Használj Bootstrap 5-öt, a táblázat legyen table-striped    -->
+
+<div class="container my-4">
+    <div class="row">
+        <div class="col-12 mb-3">
+            <h1>Form:</h1>
+
+        </div>
+
+    </div>
+
+   
+       
+    <form class="row">
+        <div class="mb-3 form-group">
+            <label for="email" class="form-label">Email cím:</label>
+            <input  [(ngModel)]="email" type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+        </div>
+            <div class="mb-3 form-group">
+            <label for="uzenet" class="form-label">Üzenet:</label>
+            <textarea  [(ngModel)]="uzenet" class="form-control" id="uzenet" name="uzenet" rows="4"  placeholder="Üzenj nekünk!"></textarea>
+        </div>
+        <div>
+            <button  (click)="kuldes()" type="button"  class="btn btn-primary" id="kuldes" name="kuldes" >Küldés</button>
+        </div>
+
+    </form>
+
+    <div class="row mt-3">
+        <div class="col-12">
+            <table class="table table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Email cím</th>
+                        <th>Üzenet</th>
+                    </tr>
+                    
+                </thead>
+                <tbody>
+                    <tr *ngFor="let uzenet of uzenetek">
+                        <td>{{uzenet.email}}</td>
+                        <td>{{uzenet.uzenet}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+            
+   
+
+    
+
+</div>

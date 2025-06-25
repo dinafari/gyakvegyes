@@ -1,0 +1,64 @@
+<!--6. Angular
+    Feladat:
+    Készíts egy diak-lista komponenst: 
+    A diakok tömbben minden diáknál legyen név, átlag
+    Használj *ngFor-t, Bootstrap táblázatot Átlag alapján színezd meg a sort:
+    Ha átlag > 4: table-success
+    Ha átlag < 2: table-danger 
+-->
+
+
+
+
+<div class="container my-4">
+
+    <div class="row">
+        <div class="col-12">
+            <h1>Diákok listája</h1>
+
+        </div>
+    </div>
+    <form class="row">
+        <div class=" mb-3 form-group">
+            <label for="nev" class="form-check-label">Név</label>
+            <input type="text"   [(ngModel)]="nev"    class="form-control" name="nev" id="nev" placeholder="Írd be a diák nevét!">
+        </div>
+
+        <div class=" mb-3 form-group">
+            <label for="atlag" class="form-check-label">Átlag</label>
+            <input type="number"  [(ngModel)]="atlag"  class="form-control" name="atlag" id="atlag" placeholder="Írd be a diák átlagát!">
+        </div>
+        <div>
+            <button type="button"  (click)="felvitel()"  class="btn btn-primary" name="felvitel" id="felvitel">Felvitel</button>
+        </div>
+
+    </form>
+
+    <div class="row mt-4">
+        <div class="col-12">
+            <table class="table table table-striped">
+                <thead class="table-dark text-center">
+                    <tr>
+                        <th>Név</th>
+                        <th>Átlag</th>
+                        
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                    <tr *ngFor="let diak of diakok">
+                        <td>{{diak.nev}}</td>
+                        <td>{{diak.atlag}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+</div>

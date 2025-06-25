@@ -1,4 +1,4 @@
-# 🔒 Általános kizárások
+# Általános kizárások
 node_modules/
 dist/
 .angular/
@@ -7,30 +7,31 @@ dist/
 Thumbs.db
 *.log
 
-# 🔐 Environment fájlok (biztonság miatt)
+# Environment fájlok (biztonság miatt)
 src/environments/
 
-# 🧪 Teszt fájlok kizárása
+# Teszt fájlok kizárása
 *.spec.ts
 
-# 📷 Képek kizárása (ha nincs rá szükség a projektekben)
+# Képek kizárása (ha nincs rá szükség a projektekben)
 *.jpg
 *.jpeg
 *.png
 *.gif
 *.svg
 
-# 📄 Saját jegyzetek kizárása
+# Saját jegyzetek kizárása
 leiras.txt
 vizsgaminta.txt
 hf.txt
 
-# 🔧 Fordítási beállítás-mentések
+# Fordítási beállítás-mentések
 *.map
 
-# 💻 OS és editor saját fájlok
+# OS és editor saját fájlok
 .vscode/
 .idea/
 
 # Git saját mappa
 .git
+
